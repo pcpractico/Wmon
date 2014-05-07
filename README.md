@@ -5,7 +5,7 @@ Wmon - Python System info Script
   This simple Script is a first try to develop a simple agent to monitoring computers from remote server.
 
 * **Processes**<br>
-  For now, this script can show:
+  For now, this script can return a plain text report with this:
 
   - Basic system info.
   - CPU and RAM Load.
@@ -15,7 +15,6 @@ Wmon - Python System info Script
   - System services and running programs.
   - Listening ports and established connections.
 
-The Script return a plain text report.
 
 * **Dependences:** <br>
 Python version: 3.3.3
