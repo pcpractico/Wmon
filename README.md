@@ -1,21 +1,26 @@
 Wmon - Python System info Script
 ================================
 
-This simple Script is a first try to develop a simple agent to monitoring computers from remote server.
+* **Overview**<br>
+  This simple Script is a first try to develop a simple agent to monitoring computers from remote server.
 
-For now, this script can do:
-- Basic system info.
-- CPU and RAM Load.
-- Hard Disk status.
-- Logged users.
-- Network Status
-- System services and running programs.
-- Listening ports and established connections.
+* **Processes**<br>
+  For now, this script can show:
+
+  - Basic system info.
+  - CPU and RAM Load.
+  - Hard Disk status.
+  - Logged users.
+  - Network Status
+  - System services and running programs.
+  - Listening ports and established connections.
 
 The Script return a plain text report.
 
-Special Thanks to:
-PSutil 2.1.1 team.
-
+* **Dependences:** <br>
 Python version: 3.3.3
+PSutil 2.1.1
+
+* **Special Thanks to:** <br>
+PSutil team.
 
