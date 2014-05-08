@@ -18,7 +18,7 @@ Wmon - Python System info Script
 
 * **Output:** <br>
 
- Linux Mint 16 output
+  * Linux Mint 16 output:<br>
 
 ```
   ----------------------------------------------------------------------
@@ -81,7 +81,65 @@ Local           LPort Remote          RPort       Status Pid    Service
 ::              139                               LISTEN None   
 ::              22                                LISTEN None   
 ::1             631                               LISTEN None   
-
+```
+  * Windows 8 Output:<br>
+```
+  ----------------------------------------------------------------------
+  PCpractico.es Wmon v0.52b (07/05/2014)                                
+* ------------ GENERAL SYSTEM INFO -------------------------------------
+* Platform: Windows-8-6.2.9200
+* System: Windows
+* Release: 8
+* Version: 6.2.9200
+* CPU ID: Intel64 Family 6 Model 37 Stepping 5, GenuineIntel
+* CPU Cores: 4
+* UPTIME: 10-04-2014 18:47:24
+* CPU Use: [#                                   ] 2.9%
+     - USO CPU Core 1: [                        ] 3.9%
+     - USO CPU Core 2: [                        ] 2.3%
+     - USO CPU Core 3: [                        ] 0.8%
+     - USO CPU Core 4: [                        ] 3.9%
+* Mem use: [##########                          ] 28.8% of 7.99 Gigabytes
+* ------------ SYSTEM UNITS -------------------------------------
+- Unit C:\ : [#######  ] 75.1% Used of 223.23 Gigabytes
+- Unit D:\ : [###      ] 36.6% Used of 100.00 Megabytes
+- Unit F:\ : [#########] 99.4% Used of 465.54 Gigabytes
+* ------------ NETWORK INTERFACES -------------------------------------
+* Interface: VMware Network Adapter VMnet1 [Snd: 654243Bytes (Err: 0)| Rcv: 0Bytes (Err: 0)]
+* Interface: Loopback Pseudo-Interface 1 [Snd: 0Bytes (Err: 0)| Rcv: 0Bytes (Err: 0)]
+* Interface: Ethernet [Snd: 71714092Bytes (Err: 0)| Rcv: 3500357984Bytes (Err: 0)]
+* ------------ LOGED USERS -------------------------------------
+USER:PCpractico LOGED:08-05-2014 08:33:14
+* ------------ PROCESS LIST ---------------------------------
+User                             Pid  %CPU   %MEM Process
+----------                       ---  ----   ---- ----------
+NT AUTHORITY\SYSTEM                0 240.0    0.0 System Idle Process
+NT AUTHORITY\SYSTEM                4   0.0    0.0 System
+                                 300   0.0    0.0 ?
+                                6896   0.0    0.1 ?
+                                7436   0.0    0.1 ?
+pcpractico\pcp                  7604   0.0    0.9 explorer.exe
+pcpractico\pcp                 11428   0.0    0.1 splwow64.exe
+pcpractico\pcp                  6280   0.0    0.1 nvtray.exe
+pcpractico\pcp                 10712   0.0    0.1 aetcrss1.exe
+                                8112   0.0    0.1 ?
+* ------------ NETWORK STATUS ---------------------------------
+Local           LPort Remote          RPort       Status Pid    Service
+--------------- ----- --------------- ----- ------------ -----  ----------
+0.0.0.0         111                               LISTEN 2784   
+0.0.0.0         135                               LISTEN 820    
+192.168.1.9     139                               LISTEN 4      System
+192.168.175.1   139                               LISTEN 4      System
+192.168.240.1   139                               LISTEN 4      System
+0.0.0.0         443                               LISTEN 3132   
+0.0.0.0         554                               LISTEN 3812   
+0.0.0.0         902                               LISTEN 2992   
+192.168.1.9     26430 192.168.1.254   445    ESTABLISHED 4      System
+192.168.1.9     26435 157.55.236.85   443    ESTABLISHED 7604   explorer.exe
+192.168.1.9     26512 173.194.66.125  5222   ESTABLISHED 8724   chrome.exe
+0.0.0.0         49154                             LISTEN 932    
+0.0.0.0         49155                             LISTEN 600    
+127.0.0.1       49156 127.0.0.1       5354   ESTABLISHED 1896   
 ```
 
 * **Dependences:** <br>
