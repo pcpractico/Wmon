@@ -105,9 +105,14 @@ Local           LPort Remote          RPort       Status Pid    Service
 - Unit D:\ : [###      ] 36.6% Used of 100.00 Megabytes
 - Unit F:\ : [#########] 99.4% Used of 465.54 Gigabytes
 * ------------ NETWORK INTERFACES -------------------------------------
-* Interface: VMware Network Adapter VMnet1 [Snd: 654243Bytes (Err: 0)| Rcv: 0Bytes (Err: 0)]
-* Interface: Loopback Pseudo-Interface 1 [Snd: 0Bytes (Err: 0)| Rcv: 0Bytes (Err: 0)]
-* Interface: Ethernet [Snd: 71714092Bytes (Err: 0)| Rcv: 3500357984Bytes (Err: 0)]
+* Hostname: pcpractico
+* IP Address: 192.168.1.9
+         Snd          Rcv Err-out  Err-in  Interface
+------------ ------------ ------- -------  ----------
+    973.62Kb       0.00B        0       0  VMware Network Adapter VMnet1
+     73.20Mb       3.29Gb       0       0  Ethernet
+    974.08Kb     613.80Kb       0       0  VMware Network Adapter VMnet8
+      0.00B        0.00B        0       0  Loopback Pseudo-Interface 1
 * ------------ LOGED USERS -------------------------------------
 USER:PCpractico LOGED:08-05-2014 08:33:14
 * ------------ PROCESS LIST ---------------------------------
