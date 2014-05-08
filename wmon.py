@@ -1,21 +1,37 @@
 import platform
 import psutil
 import datetime
+import socket
 class pymon():
-	def _omedida(valor):
+	def _omedida(valor, shortformat=0):
 		if valor < 1025:
-			medida = "Bytes"
+			if shortformat==0:
+				medida = "Bytes"
+			else:
+				medida = "B "
 		elif valor < 1048577:
-			medida = "Kilobytes"
+			if shortformat==0:
+				medida = "Kilobytes"
+			else:
+				medida = "Kb"
 			valor = valor/1024
 		elif valor < 1073741825:
-			medida = "Megabytes"
+			if shortformat==0:
+				medida = "Megabytes"
+			else:
+				medida = "Mb"
 			valor = (valor/1024)/1024
 		elif valor < 1099511627777:
-			medida = "Gigabytes"
+			if shortformat==0:
+				medida = "Gigabytes"
+			else:
+				medida = "Gb"
 			valor = ((valor/1024)/1024)/1024
 		else:
-			medida = "Terabytes"
+			if shortformat == 0:
+				medida = "Terabytes"
+			else:
+				medida = "Tb"
 			valor = (((valor/1024)/1024)/1024)/1024
 		return (medida, valor)
 
@@ -31,7 +47,7 @@ class pymon():
 
 	def showinfo():	
 		print ("  ----------------------------------------------------------------------")
-		print ("  PCpractico.es Wmon v0.52b (07/05/2014)                                ")
+		print ("  PCpractico.es Wmon v0.62b (08/05/2014)                                ")
 		print ("  Developer: Francisco Martínez Estellés                                ")
 		print ("* ------------ GENERAL SYSTEM INFO -------------------------------------")
 		try:
@@ -61,6 +77,7 @@ class pymon():
 				print ("     - USO CPU Core {0}: {1} {2}%".format( x+1,  pymon._percent_str(usocores[x],25),   usocores[x]   ))
 		except:
 			print ("	- No multicore CPU")
+
 		try:
 			memuse = psutil.virtual_memory().percent
 			memtotal = psutil.virtual_memory().total
@@ -70,12 +87,6 @@ class pymon():
 		print ("* Mem use: {0} {1}% of {2:,.2f} {3}".format(pymon._percent_str(memuse, 37),  memuse, pymon._omedida(int(memtotal))[1], pymon._omedida(int(memtotal))[0] ))
 
 		print ("* ------------ SYSTEM UNITS -------------------------------------")
-		'''try:
-			for parts in psutil.disk_partitions():
-				if 'fixed' in parts.opts:
-					print ("- Unit {0} : {1} {2}% Used of {3:,.2f} {4}".format(parts.device, pymon._percent_str(psutil.disk_usage(parts.mountpoint).percent, 10)  ,psutil.disk_usage(parts.mountpoint).percent, pymon._omedida(psutil.disk_usage(parts.mountpoint).total)[1], pymon._omedida(psutil.disk_usage(parts.mountpoint).total)[0] ))
-		except:
-			pass  '''
 		for parts in psutil.disk_partitions():
 			if ('fixed' in parts.opts) and ('Windows' in wm_system):
 				print ("- Unit {0} : {1} {2}% Used of {3:,.2f} {4}".format(parts.device, pymon._percent_str(psutil.disk_usage(parts.mountpoint).percent, 10)  ,psutil.disk_usage(parts.mountpoint).percent, pymon._omedida(psutil.disk_usage(parts.mountpoint).total)[1], pymon._omedida(psutil.disk_usage(parts.mountpoint).total)[0] ))	
@@ -83,12 +94,25 @@ class pymon():
 				print ("- Unit {0} : {1} {2}% Used of {3:,.2f} {4} [{5}]".format(parts.device, pymon._percent_str(psutil.disk_usage(parts.mountpoint).percent, 10)  ,psutil.disk_usage(parts.mountpoint).percent, pymon._omedida(psutil.disk_usage(parts.mountpoint).total)[1], pymon._omedida(psutil.disk_usage(parts.mountpoint).total)[0], parts.opts ))
 		
 		print ("* ------------ NETWORK INTERFACES -------------------------------------")
+		err=0
+		try:
+			wm_hostname = socket.gethostname()
+		except:
+			err=1
+		if err==0:
+			print ("* Hostname: {0}".format(wm_hostname))
+			print ("* IP Address: {0}".format( socket.gethostbyname(socket.gethostname()) ))
+		fmt = "%12s %12s %7s %7s  %s"		
+		print (fmt % ( "Snd", "Rcv", "Err-out", "Err-in", "Interface" ))
+		print (fmt % ( "------------", "------------", "-------", "-------", "----------" ))
+
 		for x in psutil.net_io_counters(pernic=True):
 			try:
-				print ("* Interface: {0} [Snd: {1}Bytes (Err: {2})| Rcv: {3}Bytes (Err: {4})]".format(x, psutil.net_io_counters(pernic=True)[x].bytes_sent, psutil.net_io_counters(pernic=True)[x].errin, psutil.net_io_counters(pernic=True)[x].bytes_recv, psutil.net_io_counters(pernic=True)[x].errout ))						
+				wm_rcv = '{0:.2f}'.format(pymon._omedida(psutil.net_io_counters(pernic=True)[x].bytes_recv, shortformat=1)[1]) + pymon._omedida(psutil.net_io_counters(pernic=True)[x].bytes_recv, shortformat=1)[0]
+				wm_snd = '{0:.2f}'.format(pymon._omedida(psutil.net_io_counters(pernic=True)[x].bytes_sent, shortformat=1)[1]) + pymon._omedida(psutil.net_io_counters(pernic=True)[x].bytes_sent, shortformat=1)[0]
+				print (fmt % ( wm_snd,  wm_rcv , psutil.net_io_counters(pernic=True)[x].errout, psutil.net_io_counters(pernic=True)[x].errin, x  ))
 			except:
-				print ("! Can't get Network interfaces.")				
-
+				pass
 		print ("* ------------ LOGED USERS -------------------------------------")
 		try:
 			wmusers = psutil.users()
