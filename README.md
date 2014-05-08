@@ -18,7 +18,7 @@ Wmon - Python System info Script
 
 * **Output:** <br>
 
-  * Linux Mint 16 output:<br>
+  Linux Mint 16 output:<br>
 
 ```
   ----------------------------------------------------------------------
@@ -82,7 +82,7 @@ Local           LPort Remote          RPort       Status Pid    Service
 ::              22                                LISTEN None   
 ::1             631                               LISTEN None   
 ```
-  * Windows 8 Output:<br>
+  Windows 8 Output:<br>
 ```
   ----------------------------------------------------------------------
   PCpractico.es Wmon v0.52b (07/05/2014)                                
