@@ -15,7 +15,12 @@ Wmon - Python System info Script
   - System services and running programs.
   - Listening ports and established connections.
 
+* **Install:**<br>
+  You can install wmon from Pypi:
+  ``` pip install wmon ```
 
+  Also you can install from console:
+  ``` python setup.py install ```
 * **Output:** <br>
 
   Linux Mint 16 output:<br>
