@@ -22,7 +22,7 @@ setup(
 	],
 	entry_points= {
         'console_scripts': [
-          'wmon = project.wmon:main',
+          'wmon = wmon.wmon:main',
         ],
 	},
 )
