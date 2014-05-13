@@ -169,5 +169,8 @@ class pymon():
 				pass
 			print (fmt % (conn.laddr[0], conn.laddr[1], craddr, crport, conn.status, conn.pid, cproc ))
 
-						
-pymon.showinfo()
+def main():						
+	pymon.showinfo()
+
+if __name__ == "__main__":
+ 	main()
