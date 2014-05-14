@@ -1,1 +1,1 @@
-from wmon import *
+wmonversion = "0.63"

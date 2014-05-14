@@ -15,12 +15,27 @@ Wmon - Python System info Script
   - System services and running programs.
   - Listening ports and established connections.
 
+* **New Features in this version:**<br>
+
+  - Use the SIX library, to determine the python versión. (Thx James Mills)
+  - Displays a message when run from python2.
+  
 * **Install:**<br>
-  You can install wmon from Pypi:
+  At moment, Wmon is only compatible with Python3<br>
+  
+  You can install wmon from Pypi:<br>
   ``` pip install wmon ```
+
+  May will need to specify the version of Pypi:
+  ``` pip3 install wmon ```
 
   Also you can install from console:
   ``` python setup.py install ```
+
+  Specific for Python3:
+  ``` python3 setup.py install ```
+
+
 * **Output:** <br>
 
   Linux Mint 16 output:<br>
