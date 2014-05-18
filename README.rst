@@ -26,13 +26,11 @@ Processes
 
 New Features in this version:
 *****************************
-  - Use the SIX library, to determine the python versión. (Thx James Mills)
-  - Displays a message when run from python2.
+  - Add Compatibility with Python 2
 
 
 Install:
 ********
-  At moment, Wmon is only compatible with Python3.
   
   You can install wmon from Pypi:
   ::

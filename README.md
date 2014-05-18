@@ -17,22 +17,20 @@ Wmon - Python System info Script
 
 * **New Features in this version:**<br>
 
-  - Use the SIX library, to determine the python versión. (Thx James Mills)
-  - Displays a message when run from python2.
+  - Add Compatibility with Python 2
   
 * **Install:**<br>
-  At moment, Wmon is only compatible with Python3<br>
   
   You can install wmon from Pypi:<br>
   ``` pip install wmon ```
 
-  May will need to specify the version of Pypi:
+  May will need to specify the version of Pypi:<br>
   ``` pip3 install wmon ```
 
-  Also you can install from console:
+  Also you can install from console:<br>
   ``` python setup.py install ```
 
-  Specific for Python3:
+  Specific for Python3:<br>
   ``` python3 setup.py install ```
 
 

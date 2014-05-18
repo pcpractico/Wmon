@@ -14,6 +14,8 @@ setup(
     packages = find_packages(),
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
+		"Programming Language :: Python :: 2.7",
+		"Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.0",
         "Programming Language :: Python :: 3.1",
         "Programming Language :: Python :: 3.2",
@@ -27,11 +29,14 @@ setup(
         "Operating System :: POSIX :: Linux",
         "Operating System :: Microsoft",
         "Operating System :: Microsoft :: Windows :: Windows NT/2000",
+		"Operating System :: Microsoft :: Windows :: Windows Server 2003",
+		"Operating System :: Microsoft :: Windows :: Windows Server 2008",
     ],
 	install_requires = [
 		'setuptools',
 		'psutil',
         'six',
+        'reportlab',
 	],
 	entry_points= {
         'console_scripts': [
