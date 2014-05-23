@@ -21,19 +21,19 @@ class pymon():
 				medida = "Megabytes"
 			else:
 				medida = "Mb"
-			valor = (valor/1024)/1024
+			valor = valor/1048576
 		elif valor < 1099511627777:
 			if shortformat==0:
 				medida = "Gigabytes"
 			else:
 				medida = "Gb"
-			valor = ((valor/1024)/1024)/1024
+			valor = valor/1073741824
 		else:
 			if shortformat == 0:
 				medida = "Terabytes"
 			else:
 				medida = "Tb"
-			valor = (((valor/1024)/1024)/1024)/1024
+			valor = valor/1099511627776
 		return (medida, valor)
 
 	def _percent_str(self, cpuuse=0, psize=50):
