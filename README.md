@@ -17,7 +17,9 @@ Wmon - Python System info Script
 
 * **New Features in this version:**<br>
 
-  - Add Compatibility with Python 2
+  - Remplace SIX library with sys.version value.
+  - Optimize _omedida function.
+
   
 * **Install:**<br>
   
