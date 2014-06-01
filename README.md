@@ -1,6 +1,8 @@
 Wmon - Python System info Script
 ================================
 
+![alt text](https://travis-ci.org/pcpractico/Wmon.svg?branch=master "Travis CI")
+
 * **Overview**<br>
   This simple Script is a first try to develop a simple agent to monitoring computers from remote server.
 
